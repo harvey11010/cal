@@ -1,12 +1,13 @@
 package calculator;
 
 import java.util.Scanner;
+import java.util.*;
 
 public class App {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int[] results = new int[10]; // 결과를 저장할 배열 선언 및 생성
+        List<Integer> results = new ArrayList<>();
         int count = 0; // 저장된 결과의 개수를 세는 변수
 
         while(true){
@@ -35,13 +36,15 @@ public class App {
             result = num1 / num2;
         }
 
-        if(count == results.length) {
-            for(int i = 0; i < results.length - 1; i++) {
-                results[i] = results[i + 1];
-            }
+        if(!results.isEmpty()) {
+            System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (계속하려면 엔터, remove 입력 시 삭제)");
+            String removeInput = sc.nextLine();
+            if(removeInput.equals("remove")){
+                results.remove(0);
                 count--;
+            }
         }
-        results[count] = result;
+        results.add(result);
         count++;
 
 
@@ -57,7 +60,8 @@ public class App {
         }
         System.out.println("저장된 결과: ");
         for(int i = 0; i < count; i++) {
-            System.out.println(results[i]);
+            System.out.println(results.get(i));
+
         }
 
 
