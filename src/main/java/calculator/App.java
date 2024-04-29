@@ -42,6 +42,17 @@ public class App {
             if(removeInput.equals("remove")){
                 results.remove(0);
                 count--;
+
+            }else{
+                sc.nextLine();
+            }
+            System.out.println("저장된 연산결과를 조회하시겠습니까? (계산을 계속하려면 엔터, inquiry 입력 시 조회))");
+            String loadInput = sc.nextLine();
+        if(loadInput.equals("inquiry")) {
+            System.out.println("저장된 결과: ");
+            for(Integer res : results) {
+            System.out.println(res);
+                }
             }
         }
         results.add(result);
