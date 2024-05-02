@@ -6,9 +6,11 @@ import java.util.List;
 
 public class Calculator {
 
-    private List<Integer> results = new ArrayList<>();
+    private List<Integer> results;
 
-
+    public Calculator(List<Integer> results) {
+        this.results = results;
+    }
 
     public int Calculate(int num1, int num2, char operator) {
         int result = 0;
