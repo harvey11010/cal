@@ -6,8 +6,9 @@ import java.util.List;
 
 public class Calculator {
 
+    private List<Integer> results = new ArrayList<>();
 
-    List<Integer> results = new ArrayList<>();
+
 
     public int Calculate(int num1, int num2, char operator) {
         int result = 0;
@@ -35,6 +36,17 @@ public class Calculator {
                 throw new UnsupportedOperationException("올바른 선택이 아닙니다.");
         }
         return result;
+
+
+    }
+    public List<Integer> getResults() {
+        return results;
     }
 
+    public void setResults(List<Integer> results) {
+        this.results = results;
+    }
+    public void removeResult(int index){
+        this.results.remove(index);
+    }
 }

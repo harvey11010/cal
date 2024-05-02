@@ -19,16 +19,16 @@ public class App {
             char opearator = sc.next().charAt(0);
 
             int result = calculator.Calculate(num1, num2, opearator);
-            calculator.results.add(result);
+            calculator.getResults().add(result);
 
 
             System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
             if(Objects.equals(sc.next(), "remove")){
-                calculator.results.remove(0);
+                calculator.getResults().remove(0);
             }
-            System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회");
+            System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
             if(Objects.equals(sc.next(), "inquiry")){
-              for(Integer res : calculator.results){
+              for(Integer res : calculator.getResults()){
                   System.out.println("연산 결과 : "+ res);
               }
         }
