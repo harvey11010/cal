@@ -7,7 +7,13 @@ public class App {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        ArithmeticCalculator arithmeticCalculator = new ArithmeticCalculator(new ArrayList<>());
+        ArithmeticCalculator arithmeticCalculator = new ArithmeticCalculator(
+                new ArrayList<>(),
+                new AddOperator(),
+                new SubtractOperator(),
+                new MultiplyOperator(),
+                new DivideOperator()
+        );
         CircleCalculator circleCalculator = new CircleCalculator(new ArrayList<>());
 
         do{
